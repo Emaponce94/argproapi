@@ -1,19 +1,13 @@
-
-.temperatura {
-  font-size: 4rem;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.temp-min-max, .humedad {
-  font-size: 2rem;
-} 
-.temp-min-max {
-  list-style: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
-
-.titulo-header {
-  font-size: 2rem;
-}
-
-
-
-
