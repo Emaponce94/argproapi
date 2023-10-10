@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import WeatherForecast from './components/WeatherForecast.jsx';
 
 function App() {
+  const [isNightMode, setIsNightMode] = useState(false);
+
+  const toggleNightMode = () => {
+    setIsNightMode(!isNightMode);
+  };
+
+  useEffect(() => {
+    if (isNightMode) {
+      document.body.classList.add('night-mode');
+    } else {
+      document.body.classList.remove('night-mode');
+    }
+  }, [isNightMode]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isNightMode ? 'night-mode' : ''}`}>
+      <button className="night-mode-toggle" onClick={toggleNightMode}>
+        Toggle Night Mode
+      </button>
+      <div className="header">
+      </div>
+      <div className="content">
+        <WeatherForecast />
+      </div>
     </div>
   );
 }

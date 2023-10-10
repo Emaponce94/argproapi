@@ -1,38 +1,96 @@
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+/* Estilos para el modo día */
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-forecast,
+.weather-forecast {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(255, 255, 255, 0.7); /* Cambia la opacidad del fondo */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Centra el contenido horizontalmente */
+  max-width: 400px; /* Establece un ancho máximo para el contenedor */
+}
+
+.forecast-title h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.forecast-table table {
+  width: 100%;
+}
+
+/* Agrega más estilos según sea necesario */
+
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el modo noche */
+.night-mode {
+  background: linear-gradient(to bottom, #222, #444); /* Fondo de degradado para el modo oscuro */
+  color: #000000; /* Color de texto en modo oscuro */
+}
+
+.weather-forecast.night-mode,
+.temperature-chart.night-mode {
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente en modo oscuro */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.weather-card {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo con transparencia */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+/* Estilos para el contenedor de tarjetas */
+.forecast-container {
+  display: flex;
+  flex-direction: column; /* Apilar las tarjetas verticalmente */
+  align-items: center;
+  justify-content: center;
+}
+/* Estilos para WeatherCard */
+.weather-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px; /* Ajusta el ancho según tus preferencias */
+  text-align: center;
   color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para AdditionalInfo */
+.additional-info {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px; /* Ajusta el ancho según tus preferencias */
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
