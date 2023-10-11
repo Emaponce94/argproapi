@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import WeatherForecast from './components/WeatherForecast.jsx';
+import CurrentTemperature from './components/CurrentTemperature'; // Importa CurrentTemperature aquí
+
 
 function App() {
   const [isNightMode, setIsNightMode] = useState(false);
@@ -25,10 +27,16 @@ function App() {
       <div className="header">
       </div>
       <div className="content">
+      <div className="weather-container">
         <WeatherForecast />
+        <CurrentTemperature temperature="28°C" humidity="50%" weatherType="Soleado" />
+       
       </div>
     </div>
+  </div>
   );
 }
 
 export default App;
+
+

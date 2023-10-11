@@ -3,11 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faCloudSun, faCloudRain, faCloud, faBolt } from '@fortawesome/free-solid-svg-icons';
 
 function WeatherForecast() {
-  // Definir el estado para almacenar los datos del pronóstico del clima
   const [forecastData, setForecastData] = useState(null);
 
   useEffect(() => {
-    // Simulación de obtención de datos del pronóstico del clima (datos ficticios)
     const fakeData = [
       { day: 'Monday', maxTemperature: '30°C', minTemperature: '20°C', weather: 'Sunny' },
       { day: 'Tuesday', maxTemperature: '32°C', minTemperature: '21°C', weather: 'Partly Cloudy' },
@@ -19,7 +17,6 @@ function WeatherForecast() {
     setForecastData(fakeData);
   }, []);
 
-  // Objeto de traducción de nombres de clima
   const weatherTranslations = {
     'Sunny': { translation: 'Soleado', icon: faSun },
     'Partly Cloudy': { translation: 'Parcialmente Nublado', icon: faCloudSun },
@@ -28,7 +25,6 @@ function WeatherForecast() {
     'Thunderstorm': { translation: 'Tormenta', icon: faBolt },
   };
 
-  // Objeto de traducción de nombres de días
   const dayTranslations = {
     'Monday': 'Lunes',
     'Tuesday': 'Martes',
@@ -37,7 +33,6 @@ function WeatherForecast() {
     'Friday': 'Viernes',
   };
 
-  // Función para obtener el nombre en español del clima y su ícono
   const getWeatherTranslation = (weather) => {
     const translationInfo = weatherTranslations[weather];
     if (translationInfo) {
@@ -48,16 +43,12 @@ function WeatherForecast() {
         </span>
       );
     }
-    return weather; // En caso de que el clima no esté en la lista, se muestra tal como está
-  };
-
-  // Función para obtener el nombre en español del día
-  const getDayTranslation = (day) => {
-    return dayTranslations[day] || day;
+    return weather;
   };
 
   return (
-    <div className="weather-forecast" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    
+    <div className="weather-forecast" >
       <div className="forecast-title">
         <h2>Pronóstico del Clima</h2>
       </div>
@@ -75,7 +66,7 @@ function WeatherForecast() {
             <tbody>
               {forecastData.map((dayData) => (
                 <tr key={dayData.day}>
-                  <td>{getDayTranslation(dayData.day)}</td>
+                  <td>{dayTranslations[dayData.day] || dayData.day}</td>
                   <td>{dayData.maxTemperature}</td>
                   <td>{dayData.minTemperature}</td>
                   <td>{getWeatherTranslation(dayData.weather)}</td>
